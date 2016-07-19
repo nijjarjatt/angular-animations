@@ -12,11 +12,15 @@
 }
 
 .fade.ng-leave{
-	transition:1s linear all;
-  	opacity: 1;
-	color: red;
+	animation: fade_animation 0.5s linear;
 }
-.fade.ng-leave.ng-leave-active {
-	color: yellow;
-	opacity: 0;
+
+@keyframes fade_animation{
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		color: yellow;
+	}
 }
