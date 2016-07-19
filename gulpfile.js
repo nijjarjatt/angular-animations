@@ -18,11 +18,17 @@ var gulp = require('gulp'),
 
 
 gulp.task('copy-js', function() {
-    gulp.src(mainBowerFiles())
-      .pipe(gulp.dest('app/dist/js'));
+  console.log(mainBowerFiles());
+  gulp.src(mainBowerFiles())
+    .pipe(gulp.dest('app/dist/js'));
 });
 
-gulp.task('connect', ['compile-ts','copy-js', 'copy-html'], function() {
+gulp.task('copy-css', function() {
+  gulp.src('app/src/assets/css/**/*')
+    .pipe(gulp.dest('app/dist/css'));
+});
+
+gulp.task('connect', ['compile-ts','copy-js', 'copy-css', 'copy-html'], function() {
   connect.server({
     root: 'app/dist',
     livereload: true
@@ -65,9 +71,16 @@ gulp.task('html', function () {
     .pipe(connect.reload());
 });
 
+gulp.task('css', function () {
+  gulp.src('./app/src/assets/css/**/*.css')
+    .pipe(gulp.dest('app/dist/css'))
+    .pipe(connect.reload());
+});
+
 gulp.task('watch', function () {
   gulp.watch(['./app/src/**/*.ts'], ['ts']);  
-  gulp.watch(['./app/src/**/*.html'], ['html'])
+  gulp.watch(['./app/src/**/*.html'], ['html']);
+  gulp.watch(['./app/src/assets/css/**/*.css'], ['css']);
 });
  
 gulp.task('build', ['connect', 'watch']);

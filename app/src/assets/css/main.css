@@ -1,0 +1,22 @@
+.fade{
+	color: red;
+}
+.fade.ng-enter{
+	transition:1s linear all;
+  	opacity: 0;
+	color: yellow;
+}
+.fade.ng-enter.ng-enter-active {
+	color: red;
+	opacity: 1;
+}
+
+.fade.ng-leave{
+	transition:1s linear all;
+  	opacity: 1;
+	color: red;
+}
+.fade.ng-leave.ng-leave-active {
+	color: yellow;
+	opacity: 0;
+}

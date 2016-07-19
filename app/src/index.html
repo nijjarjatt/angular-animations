@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Angular Auth App</title>
-	<script type="text/javascript" src="js/angular.js"></script>
-	<script type="text/javascript" src="js/angular-ui-router.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
-</head>
-<body ng-app="authApp">
-	<ui-view></ui-view>
-</body>
+	<head>
+		<title>Angular Animation App</title>	
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+
+		<script type="text/javascript" src="js/angular.js"></script>	
+		<script type="text/javascript" src="js/angular-animate.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</head>
+	<body ng-app="animApp">
+		<div class="fade" ng-if="showDiv">
+			Fade In/Out
+		</div>
+		<button ng-click="showDiv=true">Show Div</button>
+		<button ng-click="showDiv=false">Hide Div</button>
+	</body>
 </html>
