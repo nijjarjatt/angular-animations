@@ -1,26 +1,8 @@
-.fade{
-	color: red;
-}
-.fade.ng-enter{
-	transition:1s linear all;
-  	opacity: 0;
-	color: yellow;
-}
-.fade.ng-enter.ng-enter-active {
-	color: red;
-	opacity: 1;
-}
-
-.fade.ng-leave{
+.fade.ng-hide{
 	animation: fade_animation 0.5s linear;
 }
 
-@keyframes fade_animation{
-	from {
-		opacity: 1;
-	}
-	to {
-		opacity: 0;
-		color: yellow;
-	}
+@keyframes fade_animation {
+	from {opacity: 1}
+	to {opacity: 0}
 }
