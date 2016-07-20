@@ -18,7 +18,6 @@ var gulp = require('gulp'),
 
 
 gulp.task('copy-js', function() {
-  console.log(mainBowerFiles());
   gulp.src(mainBowerFiles())
     .pipe(gulp.dest('app/dist/js'));
 });

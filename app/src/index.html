@@ -6,13 +6,16 @@
 
 		<script type="text/javascript" src="js/angular.js"></script>	
 		<script type="text/javascript" src="js/angular-animate.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 	</head>
 	<body ng-app="animApp">
-		<div class="fade" ng-show="showDiv">
-			Fade In/Out
+		<div ng-controller="appController as ac">
+			<div class="fade" ng-show="ac.showDiv">
+				Fade In/Out
+			</div>
+			<button ng-click="ac.showDiv=true">Show Div</button>
+			<button ng-click="ac.showDiv=false">Hide Div</button>
 		</div>
-		<button ng-click="showDiv=true">Show Div</button>
-		<button ng-click="showDiv=false">Hide Div</button>
 	</body>
 </html>

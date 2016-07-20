@@ -1,8 +1,0 @@
-.fade.ng-hide{
-	animation: fade_animation 0.5s linear;
-}
-
-@keyframes fade_animation {
-	from {opacity: 1}
-	to {opacity: 0}
-}
